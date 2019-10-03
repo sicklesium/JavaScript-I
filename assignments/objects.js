@@ -140,9 +140,14 @@ console.log(parent.speak());
 
 // Have the child speak
 
-child.speak = function(age) {
-  return "Hello, I am " + this.child.age " years old.";
+parent.child.speak = function(age) {
+  return "Hello, I am " + this.age + " years old.";
 };
-console.log(parent.child.speak);
+console.log(parent.child.speak());
 
 // Have the grandchild speak
+
+parent.child.grandchild = function(age) {
+  return "Hello, I am named " + this.name + ".";
+};
+console.log(parent.child.grandchild());
